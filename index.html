@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asmit Ganguly - 3D Portfolio</title>
+    <meta name="description" content="3D Interactive Portfolio - Modern web developer with a passion for creative solutions">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+      <div class="loading-content">
+        <div class="loader"></div>
+        <h2>Loading Experience...</h2>
+        <div class="loading-bar">
+          <div class="loading-progress"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <span class="logo-text">AG</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Three.js Canvas Background -->
+    <canvas id="three-canvas"></canvas>
+
+    <!-- Particle System -->
+    <div id="particles"></div>
+
+    <!-- Main Content -->
+    <main id="app">
+      <!-- Hero Section -->
+      <section id="home" class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="line">Hi, I'm</span>
+            <span class="line hero-name">Asmit Ganguly</span>
+            <span class="line">Creative Developer</span>
+          </h1>
+          <p class="hero-subtitle">
+            I craft immersive digital experiences through code, design, and innovation
+          </p>
+          <div class="hero-buttons">
+            <button class="btn btn-primary" id="explore-btn">Explore My Work</button>
+            <button class="btn btn-secondary" id="contact-btn">Get In Touch</button>
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+          </div>
+          <span>Scroll to explore</span>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about-section">
+        <div class="container">
+          <h2 class="section-title">About Me</h2>
+          <div class="about-content">
+            <div class="about-text">
+              <p>I'm a passionate developer who loves creating beautiful, interactive web experiences. With expertise in modern web technologies and 3D graphics, I bring ideas to life through code.</p>
+              <div class="skills-grid">
+                <div class="skill-item" data-skill="javascript">JavaScript</div>
+                <div class="skill-item" data-skill="threejs">Three.js</div>
+                <div class="skill-item" data-skill="react">React</div>
+                <div class="skill-item" data-skill="nodejs">Node.js</div>
+                <div class="skill-item" data-skill="webgl">WebGL</div>
+                <div class="skill-item" data-skill="css">CSS3</div>
+              </div>
+            </div>
+            <div class="about-visual">
+              <div id="skill-visualization"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="projects-section">
+        <div class="container">
+          <h2 class="section-title">Featured Projects</h2>
+          <div class="projects-grid">
+            <div class="project-card" data-project="1">
+              <div class="project-image">
+                <div class="project-3d-preview" id="project-preview-1"></div>
+              </div>
+              <div class="project-info">
+                <h3>3D Interactive Experience</h3>
+                <p>A fully immersive 3D web application built with Three.js featuring real-time physics and interactive elements.</p>
+                <div class="project-tech">
+                  <span>Three.js</span>
+                  <span>WebGL</span>
+                  <span>JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link">Live Demo</a>
+                  <a href="#" class="project-link">GitHub</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card" data-project="2">
+              <div class="project-image">
+                <div class="project-3d-preview" id="project-preview-2"></div>
+              </div>
+              <div class="project-info">
+                <h3>Modern Web Application</h3>
+                <p>A responsive web application with smooth animations and modern UI/UX design principles.</p>
+                <div class="project-tech">
+                  <span>React</span>
+                  <span>CSS3</span>
+                  <span>Node.js</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link">Live Demo</a>
+                  <a href="#" class="project-link">GitHub</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card" data-project="3">
+              <div class="project-image">
+                <div class="project-3d-preview" id="project-preview-3"></div>
+              </div>
+              <div class="project-info">
+                <h3>Creative Portfolio</h3>
+                <p>An innovative portfolio showcasing creative coding techniques and experimental web technologies.</p>
+                <div class="project-tech">
+                  <span>WebGL</span>
+                  <span>GLSL</span>
+                  <span>JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link">Live Demo</a>
+                  <a href="#" class="project-link">GitHub</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact-section">
+        <div class="container">
+          <h2 class="section-title">Let's Connect</h2>
+          <div class="contact-content">
+            <div class="contact-info">
+              <h3>Ready to create something amazing together?</h3>
+              <p>I'm always open to discussing new opportunities, creative projects, or just having a chat about technology and design.</p>
+              <div class="contact-methods">
+                <a href="mailto:contact@asmit203.github.io" class="contact-method">
+                  <span class="contact-icon">📧</span>
+                  <span>Email Me</span>
+                </a>
+                <a href="https://github.com/asmit203" class="contact-method">
+                  <span class="contact-icon">🐙</span>
+                  <span>GitHub</span>
+                </a>
+                <a href="https://linkedin.com/in/asmit203" class="contact-method">
+                  <span class="contact-icon">💼</span>
+                  <span>LinkedIn</span>
+                </a>
+              </div>
+            </div>
+            <div class="contact-visual">
+              <div id="contact-3d-scene"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Custom Cursor -->
+    <div id="cursor">
+      <div class="cursor-dot"></div>
+      <div class="cursor-outline"></div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
