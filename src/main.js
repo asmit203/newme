@@ -482,6 +482,71 @@ class Portfolio3D {
       })
     })
 
+    // Profile image interactions and loading
+    const profileImg = document.querySelector('.profile-image')
+    const profileFrame = document.querySelector('.profile-image-frame')
+    
+    if (profileImg && profileFrame) {
+      // Handle loading state
+      profileFrame.classList.add('loading')
+      
+      profileImg.addEventListener('load', () => {
+        profileFrame.classList.remove('loading')
+        profileImg.classList.add('loaded')
+      })
+      
+      // Handle error state
+      profileImg.addEventListener('error', () => {
+        profileFrame.classList.remove('loading')
+        profileImg.style.display = 'none'
+      })
+      
+      // Interactive effects
+      profileFrame.addEventListener('mouseenter', () => {
+        profileFrame.style.transform = 'scale(1.05) rotateX(5deg) rotateY(5deg)'
+      })
+
+      profileFrame.addEventListener('mouseleave', () => {
+        profileFrame.style.transform = 'scale(1) rotateX(0deg) rotateY(0deg)'
+      })
+
+      // Click interaction for fun effect
+      profileFrame.addEventListener('click', () => {
+        profileFrame.style.animation = 'none'
+        setTimeout(() => {
+          profileFrame.style.animation = 'profileFloat 6s ease-in-out infinite'
+        }, 100)
+        
+        // Create a ripple effect
+        const ripple = document.createElement('div')
+        ripple.style.cssText = `
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          border-radius: 50%;
+          background: rgba(0, 212, 255, 0.3);
+          transform: translate(-50%, -50%);
+          animation: rippleEffect 0.6s ease-out;
+          pointer-events: none;
+        `
+        
+        profileFrame.appendChild(ripple)
+        setTimeout(() => ripple.remove(), 600)
+      })
+    }
+
+    // Profile image parallax scroll effect
+    const profileImageFrame = document.querySelector('.profile-image-frame')
+    if (profileImageFrame) {
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset
+        const parallax = scrolled * 0.2
+        profileImageFrame.style.transform = `translateY(${parallax}px)`
+      })
+    }
+
     // Window resize
     window.addEventListener('resize', () => {
       this.onWindowResize()
