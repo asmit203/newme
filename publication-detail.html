@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Publication Details - Portfolio</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="src/publication-detail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+      <div class="loading-content">
+        <div class="loader"></div>
+        <h2>Loading Experience...</h2>
+        <div class="loading-bar">
+          <div class="loading-progress"></div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Custom Cursor -->
+  <div id="cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+  </div>
+
+  <!-- Particles Background -->
+  <div id="particles"></div>
+
+  <!-- Three.js Canvas -->
+  <canvas id="three-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="logo">Portfolio</div>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#publications" class="nav-link active">Publications</a></li>
+        <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Publication Detail Section -->
+    <section class="publication-detail-section">
+      <div class="container">
+        <!-- Back Button -->
+        <div class="back-navigation fade-in">
+          <a href="index.html#publications" class="back-btn">
+            <span>←</span>
+            <span>Back to Publications</span>
+          </a>
+        </div>
+
+        <!-- Publication Hero -->
+        <div class="publication-hero fade-in">
+          <div class="publication-hero-content">
+            <div class="publication-icon-large" id="publication-icon">
+              📄
+            </div>
+            <h1 class="publication-title" id="publication-title">
+              Loading...
+            </h1>
+            <div class="publication-meta">
+              <span class="publication-venue" id="publication-venue">Loading...</span>
+              <span class="publication-year" id="publication-year">2024</span>
+              <span class="publication-type" id="publication-type">Conference</span>
+            </div>
+            <div class="publication-status" id="publication-status">
+              <span class="status-badge">Published</span>
+            </div>
+          </div>
+          <div class="publication-hero-image" id="publication-hero-image">
+            <!-- Hero image will be inserted here -->
+          </div>
+        </div>
+
+        <!-- Spacer -->
+        <div class="spacer"></div>
+
+        <!-- Publication Content -->
+        <div class="publication-content">
+          <div class="publication-main">
+            <!-- Abstract Section -->
+            <div class="publication-section fade-in">
+              <h2 class="section-heading">Abstract</h2>
+              <div class="abstract-content" id="abstract-content">
+                Loading abstract...
+              </div>
+            </div>
+
+            <!-- Keywords Section -->
+            <div class="publication-section fade-in">
+              <h2 class="section-heading">Keywords</h2>
+              <div class="keywords-list" id="keywords-list">
+                <!-- Keywords will be inserted here -->
+              </div>
+            </div>
+
+            <!-- Visual Content Section -->
+            <div class="publication-section fade-in">
+              <h2 class="section-heading">Visual Overview</h2>
+              <div class="publication-gallery" id="publication-gallery">
+                <!-- Gallery will be inserted here -->
+              </div>
+            </div>
+
+            <!-- Citation Section -->
+            <div class="publication-section fade-in">
+              <h2 class="section-heading">Citation</h2>
+              <div class="citation-content">
+                <div class="citation-text" id="citation-text">
+                  Loading citation...
+                </div>
+                <button class="copy-citation-btn" onclick="copyCitation()">
+                  <span>📋</span>
+                  <span>Copy Citation</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="publication-sidebar">
+            <!-- Authors Section -->
+            <div class="sidebar-section fade-in">
+              <h3 class="sidebar-heading">Authors</h3>
+              <div class="authors-list" id="authors-list">
+                <!-- Authors will be inserted here -->
+              </div>
+            </div>
+
+            <!-- Links Section -->
+            <div class="sidebar-section fade-in">
+              <h3 class="sidebar-heading">Links</h3>
+              <div class="publication-links" id="publication-links">
+                <!-- Links will be inserted here -->
+              </div>
+            </div>
+
+            <!-- Quick Info -->
+            <div class="sidebar-section fade-in">
+              <h3 class="sidebar-heading">Publication Info</h3>
+              <div class="publication-info-grid">
+                <div class="info-item">
+                  <span class="info-label">Venue:</span>
+                  <span class="info-value" id="info-venue">Loading...</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">Year:</span>
+                  <span class="info-value" id="info-year">2024</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">Type:</span>
+                  <span class="info-value" id="info-type">Conference</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script type="module" src="src/publication-detail.js"></script>
+</body>
+</html>

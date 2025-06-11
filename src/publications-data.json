@@ -1,0 +1,109 @@
+{
+    "publications": [
+        {
+            "id": "kan-ophthalmic",
+            "title": "Cracking the code: enhancing interpretability and accessibility of ophthalmic disorders detection using KAN",
+            "authors": [
+                "Asmit Ganguly",
+                "Vasudevan Lakshminarayanan"
+            ],
+            "venue": "SPIE Photonics West Ophthalmic Technologies XXXV",
+            "year": "2025",
+            "type": "Conference",
+            "icon": "👁️",
+            "abstract": "This paper introduces an innovative approach to ophthalmic disorder detection using Kolmogorov-Arnold Networks (KAN) for enhanced interpretability. Our method significantly improves the accessibility and understanding of automated diagnostic systems in ophthalmology, providing clinicians with transparent and reliable AI-driven insights for better patient care.",
+            "fullAbstract": "This study emphasizes the importance of interpretability and accessibility in deep learning models applied to ophthalmology, particularly in Optical Coherence Tomography (OCT) analysis. The “black box” nature of many deep learning models presents challenges for clinicians, who require transparent explanations for model decisions to build trust and ensure accountability. Kolmogorov-Arnold Networks (KANs) offer a promising solution by decomposing complex functions into simpler, interpretable components, making them more suitable for clinical settings. This study explores the application of KANs in OCT analysis, focusing on feature decomposition, rule extraction, and visualization to enhance interpretability. Preliminary results indicate that for models combining Convolutional Neural Networks (CNNs) with KANs, particularly those with smaller parameter counts, performance is comparable to larger, more complex models while remaining more accessible and interpretable. For instance, a CNN+KAN model with 0.3M parameters achieved a significant performance boost from 60% to 88.79% accuracy after pre-training on the MNIST dataset, using only 1.4% of the parameters of the best-performing ResNet-34 model. This highlights the potential of KANs in reducing model complexity without sacrificing performance, making them suitable for deployment in resource-limited environments. The study calls for further investigation into the balance between model complexity and interpretability, aiming to improve diagnostic methodologies and build trust in AI systems in ophthalmology.",
+            "keywords": [
+                "Kolmogorov-Arnold Networks",
+                "Ophthalmic Disorders",
+                "Interpretable AI",
+                "Medical Imaging",
+                "Diabetic Retinopathy"
+            ],
+            "links": {
+                "paper": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13300/133000R/Cracking-the-code--enhancing-interpretability-and-accessibility-of-ophthalmic/10.1117/12.3047749.short",
+                "code": "https://github.com/asmit203/cracking-kan-oct",
+                "slides": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13300/133000R/Cracking-the-code--enhancing-interpretability-and-accessibility-of-ophthalmic/10.1117/12.3047749.short?tab=ArticleLinkFigureTable",
+                "poster": "https://doi.org/10.1117/12.3047749"
+            },
+            "images": {
+                "hero": "/public/publications/kan/kan-hero.png",
+                "architecture": "/public/publications/kan/kan-arch.png",
+                "results": "/public/publications/kan/kan-results.png"
+            },
+            "citation": "@inproceedings{ganguly2025cracking,\n  title={Cracking the code: enhancing interpretability and accessibility of ophthalmic disorder detection using Kolmogorov-Arnold Network},\n  author={Ganguly, Asmit and Lakshminarayanan, Vasudevan},\n  booktitle={Ophthalmic Technologies XXXV},\n  volume={13300},\n  pages={150--158},\n  year={2025},\n  organization={SPIE}\n}",
+            "status": "Published"
+        },
+        {
+            "id": "semantify-memes",
+            "title": "SEMANTIFY: Unveiling Memes with Robust Interpretability beyond Input Attribution",
+            "authors": [
+                "Dibyanayan Bandyopadhyay",
+                "Asmit Ganguly",
+                "Baban Gain",
+                "Asif Ekbal"
+            ],
+            "venue": "IJCAI 2024 Main",
+            "year": "2024",
+            "type": "Conference",
+            "icon": "📄",
+            "abstract": "Advanced meme interpretation using robust interpretability techniques beyond traditional input attribution methods.",
+            "fullAbstract": "Internet memes have become a dominant form of digital communication, carrying complex social, cultural, and political messages. Understanding meme semantics requires sophisticated interpretability methods that go beyond traditional input attribution techniques. This paper introduces SEMANTIFY, a novel framework for robust meme interpretation that combines multi-modal analysis with advanced interpretability mechanisms.\n\nOur approach addresses the unique challenges of meme understanding: (1) Multi-modal fusion of visual and textual elements, (2) Context-aware interpretation that considers cultural and temporal factors, (3) Robust attribution methods that handle adversarial examples and edge cases, and (4) Scalable analysis pipeline for real-time meme understanding.\n\nSEMANTIFY achieves state-of-the-art performance on multiple meme datasets, demonstrating superior robustness to adversarial attacks while providing meaningful interpretations that align with human understanding of meme semantics.",
+            "keywords": [
+                "Meme Analysis",
+                "Interpretable AI",
+                "Multi-modal Learning",
+                "Robust Attribution",
+                "Social Media"
+            ],
+            "links": {
+                "paper": "https://www.ijcai.org/proceedings/2024/0684.pdf",
+                "code": "https://github.com/newcodevelop/semantify",
+                "slides": "",
+                "poster": ""
+            },
+            "images": {
+                "hero": "/public/publications/semantify/semantify-hero.png",
+                "architecture": "/public/publications/semantify/semantify-arch.png",
+                "results": "/public/publications/semantify/semantify-results.png"
+            },
+            "citation": "@inproceedings{bandyopadhyay2024semantify,\ntitle={SEMANTIFY: Unveiling Memes with Robust Interpretability beyond Input Attribution},\nauthor={Bandyopadhyay, Dibyanayan and Ganguly, Asmit and Gain, Baban and Ekbal, Asif},\nbooktitle={IJCAI'24 Main},\nyear={2024}\n}",
+            "status": "Published"
+        },
+        {
+            "id": "alpapico-pico",
+            "title": "AlpaPICO: Extraction of PICO Frames from Clinical Trial Documents Using LLMs",
+            "authors": [
+                "Madhusudhan Ghosh & Shrimon Mukherjee",
+                "Asmit Ganguly",
+                "Research Collaborators"
+            ],
+            "venue": "Method",
+            "year": "2024",
+            "type": "Journal",
+            "icon": "🔬",
+            "abstract": "Novel approach for extracting PICO (Population, Intervention, Comparison, Outcome) frameworks from clinical trial documents using Large Language Models.",
+            "fullAbstract": "In recent years, there has been a surge in the publication of clinical trial reports, making it challenging to conduct systematic reviews. Automatically extracting Population, Intervention, Comparator, and Outcome (PICO) from clinical trial studies can alleviate the traditionally time-consuming process of manually scrutinizing systematic reviews. Existing approaches of PICO frame extraction involves supervised approach that relies on the existence of manually annotated data points in the form of BIO label tagging. Recent approaches, such as In-Context Learning (ICL), which has been shown to be effective for a number of downstream NLP tasks, require the use of labeled examples. In this work, we adopt ICL strategy by employing the pretrained knowledge of Large Language Models (LLMs), gathered during the pretraining phase of an LLM, to automatically extract the PICO-related terminologies from clinical trial documents in unsupervised set up to bypass the availability of large number of annotated data instances. Additionally, to showcase the highest effectiveness of LLM in oracle scenario where large number of annotated samples are available, we adopt the instruction tuning strategy by employing Low Rank Adaptation (LORA) to conduct the training of gigantic model in low resource environment for the PICO frame extraction task. More specifically, both of the proposed frameworks utilize AlpaCare as base LLM which employs both few-shot in-context learning and instruction tuning techniques to extract PICO-related terms from the clinical trial reports. We applied these approaches to the widely used coarse-grained datasets such as EBM- NLP, EBM-COMET and fine-grained datasets such as EBM-NLP𝑟𝑒𝑣 and EBM-NLPℎ. Our empirical results show that our proposed ICL-based framework produces comparable results on all the version of EBM-NLP datasets and the proposed instruction tuned version of our framework produces state-of-the-art results on all the different EBM-NLP datasets.",
+            "keywords": [
+                "PICO Extraction",
+                "Large Language Models",
+                "Clinical Trials",
+                "Evidence-based Medicine",
+                "Natural Language Processing"
+            ],
+            "links": {
+                "paper": "https://arxiv.org/abs/2409.09704",
+                "code": "https://github.com/shrimonmuke0202/AlpaPICO",
+                "slides": "",
+                "poster": ""
+            },
+            "images": {
+                "hero": "/public/publications/alpapico/alpapico-hero.png",
+                "architecture": "/public/publications/alpapico/alpapico-arch.png",
+                "results": "/public/publications/alpapico/alpapico-results.png"
+            },
+            "citation": "@article{ghosh2024alpapico,\ntitle={AlpaPICO: Extraction of PICO frames from clinical trial documents using LLMs},\nauthor={Ghosh, Madhusudan and Mukherjee, Shrimon and Ganguly, Asmit and Basuchowdhuri, Partha and Naskar, Sudip Kumar and Ganguly, Debasis},\njournal={Methods},\nvolume={226},\npages={78--88},\nyear={2024},\npublisher={Academic Press}\n}",
+            "status": "Published"
+        }
+    ]
+}
