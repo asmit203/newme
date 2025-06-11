@@ -1269,35 +1269,13 @@ main {
 .publication-link {
   padding: var(--spacing-sm) var(--spacing-lg);
   border: 1px solid var(--primary-color);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-full);
   color: var(--primary-color);
   text-decoration: none;
   font-size: var(--font-size-sm);
   font-weight: 500;
-  background: rgba(255, 255, 255, 0.05);
+  transition: all var(--animation-speed-normal);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-    transition: all var(--animation-speed-normal);
-    display: inline-flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .publication-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
-    transition: left 0.6s ease;
-  }
-  
-  .publication-link:hover::before {
-    left: 100%;
 }
 
 .publication-link:hover {
@@ -1305,7 +1283,6 @@ main {
   color: var(--bg-primary);
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
-  border-color: var(--primary-color);
 }
 
 /* Projects Section */
@@ -1385,42 +1362,11 @@ main {
   color: var(--primary-color);
   text-decoration: none;
   font-weight: 600;
-  padding: var(--spacing-sm) var(--spacing-lg);
-    border: 1px solid var(--primary-color);
-    border-radius: var(--radius-xl);
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
   transition: all var(--animation-speed-normal);
-  display: inline-flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    position: relative;
-    overflow: hidden;
-    font-size: var(--font-size-sm);
-  }
-  
-  .project-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
-    transition: left 0.6s ease;
-  }
-  
-  .project-link:hover::before {
-    left: 100%;
 }
 
 .project-link:hover {
-  background: var(--primary-color);
-    color: var(--bg-primary);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
-    border-color: var(--primary-color);
+  color: var(--text-primary);
 }
 
 /* Contact Section */
