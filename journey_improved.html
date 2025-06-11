@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Journey - Life Story & Education</title>
+  <link rel="stylesheet" href="./src/style.css">
+  <link rel="stylesheet" href="./src/journey_improved.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="logo">Portfolio</div>
+      <ul class="nav-menu">
+        <li><a href="./index.html" class="nav-link">Home</a></li>
+        <li><a href="./index.html#about" class="nav-link">About</a></li>
+        <li><a href="./index.html#publications" class="nav-link">Publications</a></li>
+        <li><a href="./index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="./journey_improved.html" class="nav-link active">Journey</a></li>
+        <li><a href="./index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Improved Journey Page with Modern Design -->
+  <main>
+    <!-- Initial Choice Section with 3D Hover Effect -->
+    <section class="journey-choice-section" style="opacity: 1; transition: opacity 0.6s ease;">
+      <div class="journey-choice-glass">
+        <h1>My Journey</h1>
+        <p>Explore the path that has shaped who I am today. Would you like to see my <strong>Life Story</strong> or <strong>Education</strong> journey?</p>
+        <div class="journey-choice-btns">
+          <button id="life-btn" class="journey-btn">Life Story</button>
+          <button id="edu-btn" class="journey-btn">Education</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section with 3D Cards and Smooth Navigation -->
+    <section class="journey-timeline-section" style="display:none; opacity: 0; transition: opacity 0.6s ease;">
+      <canvas id="journey-canvas"></canvas>
+      <!-- Timeline content will be dynamically added by JavaScript -->
+    </section>
+  </main>
+
+  <script type="module" src="./src/journey_improved.js"></script>
+</body>
+</html>

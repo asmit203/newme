@@ -14,6 +14,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         journey: resolve(__dirname, 'journey.html'),
+        journeyImproved: resolve(__dirname, 'journey_improved.html'),
         publicationDetail: resolve(__dirname, 'publication-detail.html'),
       },
       output: {
