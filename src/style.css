@@ -770,8 +770,8 @@ main {
 
 .profile-image-frame {
   position: relative;
-  width: 180px;
-  height: 180px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.1);
@@ -802,6 +802,7 @@ main {
   border-radius: 50%;
   transition: all var(--animation-speed-normal);
   filter: brightness(1.1) contrast(1.1) saturate(1.2);
+  opacity: 1;
 }
 
 .profile-image.loaded {
@@ -827,7 +828,7 @@ main {
 }
 
 .profile-image-frame.loading .profile-image {
-  opacity: 0;
+  /* Image remains visible during loading */
 }
 
 .profile-glow {
