@@ -6,55 +6,55 @@ import * as THREE from 'three';
 const timelineData = {
     life: [
         {
-            year: '1998',
+            year: '2004',
             title: 'The Beginning',
-            text: 'Born in Kolkata, India. The journey begins!',
-            img: './gallery/gallery-1.jpg'
+            text: 'Born in India. The journey begins!',
+            img: './journey/2004.jpg'
         },
         {
-            year: '2005',
+            year: '2009',
             title: 'Digital Discovery',
-            text: 'First computer. Discovered a love for technology and creativity that would shape my future interests and career path.',
-            img: './gallery/gallery-2.jpg'
+            text: 'Joined KVS found my passion for creativity and intertwind interest in Medical field. Lemme flex a little bit, I was ranked 1st in my school from class 9 through 12th grade.',
+            img: './journey/2009.jpg'
         },
         {
-            year: '2015',
+            year: '2021',
             title: 'Academic Milestone',
-            text: 'Graduated high school with honors, started exploring coding and design as potential career paths.',
-            img: './gallery/gallery-3.jpg'
+            text: 'Joined the prestigious Indian Institute of Technology (IIT) Patna for my Undergraduate degree in Computer Science and Engineering, where I honed my skills in programming and problem-solving. IUSSTF-Viterbi Research Intern @ LOFT-USC INI | MITACS GRI\'24 Scholar | DAAD-WISE\'24 Awardee | UG Research @ AI-NLP-ML Lab IITP | FAST-SF\'23 Fellow @ IACS',
+            img: './journey/2021.jpg'
         },
         {
-            year: '2020',
-            title: 'Professional Growth',
-            text: 'Began PhD journey, blending science, art, and technology to explore new frontiers in research and innovation.',
-            img: './gallery/gallery-4.jpg'
+            year: '2025',
+            title: 'Doing what I love ❤️',
+            text: 'Upcoming !!',
+            img: './journey/2025.jpg'
         }
     ],
     education: [
-        {
-            year: '2015',
-            title: 'High School',
-            text: 'Graduated top of the class with honors in mathematics and sciences, laying the foundation for my academic journey.',
-            img: './gallery/gallery-1.jpg'
-        },
-        {
-            year: '2018',
-            title: 'Bachelor\'s Degree',
-            text: 'Earned BSc in Physics from University of Calcutta, focusing on computational methods and theoretical frameworks.',
-            img: './gallery/gallery-2.jpg'
-        },
-        {
-            year: '2020',
-            title: 'Master\'s Degree',
-            text: 'Completed MSc in Physics at IIT Kharagpur with specialization in quantum mechanics and advanced mathematical methods.',
-            img: './gallery/gallery-3.jpg'
-        },
-        {
-            year: '2022',
-            title: 'Doctoral Research',
-            text: 'Started PhD in Computational Neuroscience, investigating the intersection of mathematics, physics, and biology.',
-            img: './gallery/gallery-4.jpg'
-        }
+        // {
+        //     year: '2021',
+        //     title: 'High School',
+        //     text: 'Graduated top of the class with honors in mathematics and sciences, laying the foundation for my academic journey.',
+        //     img: './journey/gallery-1.jpg'
+        // },
+        // {
+        //     year: '2018',
+        //     title: 'Bachelor\'s Degree',
+        //     text: 'Earned BSc in Physics from University of Calcutta, focusing on computational methods and theoretical frameworks.',
+        //     img: './journey/gallery-2.jpg'
+        // },
+        // {
+        //     year: '2020',
+        //     title: 'Master\'s Degree',
+        //     text: 'Completed MSc in Physics at IIT Kharagpur with specialization in quantum mechanics and advanced mathematical methods.',
+        //     img: './journey/gallery-3.jpg'
+        // },
+        // {
+        //     year: '2022',
+        //     title: 'Doctoral Research',
+        //     text: 'Started PhD in Computational Neuroscience, investigating the intersection of mathematics, physics, and biology.',
+        //     img: './journey/gallery-4.jpg'
+        // }
     ]
 };
 
@@ -76,6 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Setup custom cursor
+    setupCustomCursor();
 
     // Initialize the 3D background scene
     initBackgroundScene();
@@ -441,6 +444,54 @@ function createParticle(e) {
     setTimeout(() => {
         particle.remove();
     }, duration * 1000);
+}
+
+// Custom cursor implementation
+function setupCustomCursor() {
+    const cursor = document.getElementById('cursor');
+    const cursorDot = cursor.querySelector('.cursor-dot');
+    const cursorOutline = cursor.querySelector('.cursor-outline');
+
+    // Add will-change for GPU acceleration
+    cursorDot.style.willChange = 'transform';
+    cursorOutline.style.willChange = 'transform';
+
+    let mouseX = 0, mouseY = 0;
+    let dotX = 0, dotY = 0;
+    let outlineX = 0, outlineY = 0;
+
+    // Track mouse position
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    // Animate cursor with requestAnimationFrame for smooth performance
+    const animateCursor = () => {
+        // Dot follows mouse instantly, but with a small lerp for smoothness
+        dotX += (mouseX - dotX) * 0.35;
+        dotY += (mouseY - dotY) * 0.35;
+        cursorDot.style.transform = `translate(${dotX}px, ${dotY}px)`;
+
+        // Outline follows with more lag
+        outlineX += (mouseX - outlineX) * 0.15;
+        outlineY += (mouseY - outlineY) * 0.15;
+        cursorOutline.style.transform = `translate(${outlineX}px, ${outlineY}px)`;
+
+        requestAnimationFrame(animateCursor);
+    };
+    animateCursor();
+
+    // Add hover effect to interactive elements
+    const interactiveElements = document.querySelectorAll('button, a, .timeline-dot, .journey-btn');
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursorOutline.classList.add('expand');
+        });
+        el.addEventListener('mouseleave', () => {
+            cursorOutline.classList.remove('expand');
+        });
+    });
 }
 
 // Add fadeOut animation
