@@ -5,7 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Asmit Ganguly - 3D Portfolio</title>
-    <meta name="description" content="3D Interactive Portfolio - Modern web developer with a passion for creative solutions">
+    <meta name="description" content="Asmit Ganguly - AI/ML Researcher specializing in neuroimaging, biomedical image processing, and deep learning. Interactive 3D portfolio showcasing research publications and innovative projects.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -31,6 +31,7 @@
         <ul class="nav-menu">
           <li><a href="#home" class="nav-link">Home</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#publications" class="nav-link">Publications</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
@@ -56,10 +57,10 @@
           <h1 class="hero-title">
             <span class="line">Hi, I'm</span>
             <span class="line hero-name">Asmit Ganguly</span>
-            <span class="line">Creative Developer</span>
+            <span class="line">Researcher</span>
           </h1>
           <p class="hero-subtitle">
-            I craft immersive digital experiences through code, design, and innovation
+            I develop interpretable and efficient AI models for real-world applications, especially in healthcare and multimodal systems
           </p>
           <div class="hero-buttons">
             <button class="btn btn-primary" id="explore-btn">Explore My Work</button>
@@ -87,14 +88,15 @@
                   <div class="profile-border"></div>
                 </div>
               </div>
-              <p>I'm a passionate developer who loves creating beautiful, interactive web experiences. With expertise in modern web technologies and 3D graphics, I bring ideas to life through code.</p>
+              <p>As a Computer Science and Engineering student passionate about AI and ML, I've researched and innovated in neuroimaging, biomedical image processing, NLPs, and quantum computing. My goal is to develop interpretable and efficient AI models for real-world applications, especially in healthcare and multimodal systems.</p>
+              <p>My drive stems from knowledge pursuit and complex challenge solving. I enhance AI interpretability for healthcare, explore novel multimodal data processing, and advance quantum algorithms. Rigorous research and practical solutions drive technological advancements.</p>
               <div class="skills-grid">
-                <div class="skill-item" data-skill="javascript">JavaScript</div>
-                <div class="skill-item" data-skill="threejs">Three.js</div>
-                <div class="skill-item" data-skill="react">React</div>
-                <div class="skill-item" data-skill="nodejs">Node.js</div>
-                <div class="skill-item" data-skill="webgl">WebGL</div>
-                <div class="skill-item" data-skill="css">CSS3</div>
+                <div class="skill-item" data-skill="deeplearning">Deep Learning</div>
+                <div class="skill-item" data-skill="mathanalysis">Mathematical Analysis</div>
+                <div class="skill-item" data-skill="dataanalysis">Data Analysis</div>
+                <div class="skill-item" data-skill="technicalwriting">Technical Writing</div>
+                <div class="skill-item" data-skill="webdev">Web Development</div>
+                <div class="skill-item" data-skill="collaboration">Collaboration</div>
               </div>
             </div>
             <div class="about-visual">
@@ -104,63 +106,173 @@
         </div>
       </section>
 
+      <!-- Publications Section -->
+      <section id="publications" class="publications-section">
+        <div class="container">
+          <h2 class="section-title fade-in">Publications</h2>
+          <div class="publications-grid">
+            <div class="publication-card fade-in">
+              <div class="publication-image">
+                <div class="publication-icon">📄</div>
+              </div>
+              <div class="publication-info">
+                <h3>SEMANTIFY: Unveiling Memes with Robust Interpretability beyond Input Attribution</h3>
+                <p class="publication-venue">IJCAI 2024 Main</p>
+                <p class="publication-abstract">Advanced meme interpretation using robust interpretability techniques beyond traditional input attribution methods.</p>
+                <div class="publication-links">
+                  <a href="#" class="publication-link">View Paper</a>
+                  <a href="#" class="publication-link">View Code</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="publication-card fade-in">
+              <div class="publication-image">
+                <div class="publication-icon">🔬</div>
+              </div>
+              <div class="publication-info">
+                <h3>AlpaPICO: Extraction of PICO Frames from Clinical Trial Documents Using LLMs</h3>
+                <p class="publication-venue">Method</p>
+                <p class="publication-abstract">Novel approach for extracting PICO (Population, Intervention, Comparison, Outcome) frameworks from clinical trial documents using Large Language Models.</p>
+                <div class="publication-links">
+                  <a href="#" class="publication-link">View Paper</a>
+                  <a href="#" class="publication-link">View Code</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="publication-card fade-in">
+              <div class="publication-image">
+                <div class="publication-icon">👁️</div>
+              </div>
+              <div class="publication-info">
+                <h3>Cracking the code: enhancing interpretability and accessibility of ophthalmic disorders detection using KAN</h3>
+                <p class="publication-venue">SPIE Photonics West Ophthalmic Technologies XXXV</p>
+                <p class="publication-abstract">Innovative approach to ophthalmic disorder detection using Kolmogorov-Arnold Networks (KAN) for enhanced interpretability.</p>
+                <div class="publication-links">
+                  <a href="#" class="publication-link">View Paper</a>
+                  <a href="#" class="publication-link">View Code</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Projects Section -->
       <section id="projects" class="projects-section">
         <div class="container">
-          <h2 class="section-title">Featured Projects</h2>
+          <h2 class="section-title fade-in">Featured Projects</h2>
           <div class="projects-grid">
-            <div class="project-card" data-project="1">
+            <div class="project-card fade-in" data-project="1">
               <div class="project-image">
                 <div class="project-3d-preview" id="project-preview-1"></div>
               </div>
               <div class="project-info">
-                <h3>3D Interactive Experience</h3>
-                <p>A fully immersive 3D web application built with Three.js featuring real-time physics and interactive elements.</p>
+                <h3>TalkitOut</h3>
+                <p>Full-fledged open-source social media platform with chat, video call, and blogging capabilities. Features real-time communication, community posting, and secure file transfer with AI Co-Pilot integration.</p>
                 <div class="project-tech">
-                  <span>Three.js</span>
-                  <span>WebGL</span>
-                  <span>JavaScript</span>
+                  <span>WebRTC</span>
+                  <span>Real-time Chat</span>
+                  <span>AI Integration</span>
                 </div>
                 <div class="project-links">
-                  <a href="#" class="project-link">Live Demo</a>
+                  <a href="#" class="project-link">View Project</a>
                   <a href="#" class="project-link">GitHub</a>
                 </div>
               </div>
             </div>
 
-            <div class="project-card" data-project="2">
+            <div class="project-card fade-in" data-project="2">
               <div class="project-image">
                 <div class="project-3d-preview" id="project-preview-2"></div>
               </div>
               <div class="project-info">
-                <h3>Modern Web Application</h3>
-                <p>A responsive web application with smooth animations and modern UI/UX design principles.</p>
+                <h3>Domain Specific Question Answering (DevRev)</h3>
+                <p>Gold medalist solution for Inter IIT 11.0. Domain adaptation in open domain QA using theme-specific rankers and novel resource allocation algorithms for paragraph examination.</p>
                 <div class="project-tech">
-                  <span>React</span>
-                  <span>CSS3</span>
-                  <span>Node.js</span>
+                  <span>NLP</span>
+                  <span>Question Answering</span>
+                  <span>Deep Learning</span>
                 </div>
                 <div class="project-links">
-                  <a href="#" class="project-link">Live Demo</a>
+                  <a href="#" class="project-link">View Project</a>
                   <a href="#" class="project-link">GitHub</a>
                 </div>
               </div>
             </div>
 
-            <div class="project-card" data-project="3">
+            <div class="project-card fade-in" data-project="3">
               <div class="project-image">
                 <div class="project-3d-preview" id="project-preview-3"></div>
               </div>
               <div class="project-info">
-                <h3>Creative Portfolio</h3>
-                <p>An innovative portfolio showcasing creative coding techniques and experimental web technologies.</p>
+                <h3>Neural Activity Classifier</h3>
+                <p>Deep learning model for EEG data classification to determine if specific actions are undertaken or thought by patients. Achieves 75% accuracy in single channel, applicable to gaming and VR enhancement.</p>
                 <div class="project-tech">
-                  <span>WebGL</span>
-                  <span>GLSL</span>
-                  <span>JavaScript</span>
+                  <span>Deep Learning</span>
+                  <span>EEG Analysis</span>
+                  <span>Time Series</span>
                 </div>
                 <div class="project-links">
-                  <a href="#" class="project-link">Live Demo</a>
+                  <a href="#" class="project-link">View Project</a>
+                  <a href="#" class="project-link">GitHub</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card fade-in" data-project="4">
+              <div class="project-image">
+                <div class="project-3d-preview" id="project-preview-4"></div>
+              </div>
+              <div class="project-info">
+                <h3>Ping Pong on FPGA</h3>
+                <p>Standalone ping pong game implemented on FPGA Board DE1-SOC. Integrated hardware design with Linux installation, demonstrating computer architecture principles in embedded systems.</p>
+                <div class="project-tech">
+                  <span>FPGA</span>
+                  <span>Hardware Design</span>
+                  <span>Linux</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link">View Project</a>
+                  <a href="#" class="project-link">GitHub</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card fade-in" data-project="5">
+              <div class="project-image">
+                <div class="project-3d-preview" id="project-preview-5"></div>
+              </div>
+              <div class="project-info">
+                <h3>LostFound Android App</h3>
+                <p>Android application for Lost and Found system using Firebase for data storage. Features one-click item return, picture support, and mail verification for enhanced security.</p>
+                <div class="project-tech">
+                  <span>Android</span>
+                  <span>Firebase</span>
+                  <span>Mobile Development</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link">View Project</a>
+                  <a href="#" class="project-link">GitHub</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card fade-in" data-project="6">
+              <div class="project-image">
+                <div class="project-3d-preview" id="project-preview-6"></div>
+              </div>
+              <div class="project-info">
+                <h3>Assembler Emulator</h3>
+                <p>Custom assembler and emulator for a specially designed instruction set. Emulates a 2-register computer with data segment storage using C++, demonstrating low-level programming concepts.</p>
+                <div class="project-tech">
+                  <span>C++</span>
+                  <span>Assembly</span>
+                  <span>Computer Architecture</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link">View Project</a>
                   <a href="#" class="project-link">GitHub</a>
                 </div>
               </div>
@@ -175,10 +287,10 @@
           <h2 class="section-title">Let's Connect</h2>
           <div class="contact-content">
             <div class="contact-info">
-              <h3>Ready to create something amazing together?</h3>
-              <p>I'm always open to discussing new opportunities, creative projects, or just having a chat about technology and design.</p>
+              <h3>Ready to collaborate on cutting-edge research?</h3>
+              <p>I'm always open to discussing new research opportunities, innovative AI projects, or collaborating on publications in machine learning and healthcare applications.</p>
               <div class="contact-methods">
-                <a href="mailto:contact@asmit203.github.io" class="contact-method">
+                <a href="mailto:asmit.ganguly@gmail.com" class="contact-method">
                   <span class="contact-icon">📧</span>
                   <span>Email Me</span>
                 </a>
@@ -186,9 +298,13 @@
                   <span class="contact-icon">🐙</span>
                   <span>GitHub</span>
                 </a>
-                <a href="https://linkedin.com/in/asmit203" class="contact-method">
+                <a href="https://www.linkedin.com/in/asmitganguly" class="contact-method">
                   <span class="contact-icon">💼</span>
                   <span>LinkedIn</span>
+                </a>
+                <a href="https://medium.com/@asmit.ganguly" class="contact-method">
+                  <span class="contact-icon">📝</span>
+                  <span>Medium</span>
                 </a>
               </div>
             </div>

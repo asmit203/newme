@@ -1,17 +1,28 @@
 # 🚀 Asmit Ganguly - 3D Portfolio
 
-A modern, interactive 3D portfolio website built with **Vite**, **Three.js**, and packed with stunning animations. Optimized for static hosting on GitHub Pages.
+A modern, interactive 3D portfolio website showcasing AI/ML research, publications, and innovative projects. Built with **Vite**, **Three.js**, and packed with stunning animations for optimal research presentation.
 
-## ✨ Features
+## 🔬 About Asmit
 
-- **🎨 Modern 3D Graphics** - Interactive 3D scenes powered by Three.js
-- **⚡ Smooth Animations** - Buttery smooth transitions and effects using Tween.js
+Computer Science and Engineering researcher passionate about AI and ML, specializing in:
+- **Neuroimaging** - Advanced brain imaging analysis
+- **Biomedical Image Processing** - Healthcare AI applications  
+- **Natural Language Processing** - Clinical document analysis
+- **Quantum Computing** - Next-generation algorithms
+- **Deep Learning** - Interpretable AI models
+
+## ✨ Portfolio Features
+
+- **🎨 Modern 3D Graphics** - Interactive research showcase powered by Three.js
+- **⚡ Smooth Animations** - Professional presentation with Tween.js
 - **📱 Fully Responsive** - Perfect experience across all devices
-- **🎯 Performance Optimized** - Fast loading and smooth performance
-- **🔥 Interactive Elements** - Hover effects, particle systems, and dynamic lighting
-- **🎪 Custom Cursor** - Engaging custom cursor interactions
-- **📜 Scroll Animations** - Elements animate into view as you scroll
-- **🌓 Modern Design** - Sleek dark theme with gradient accents
+- **🎯 Performance Optimized** - Fast loading for academic environments
+- **🔥 Interactive Elements** - Engaging project demonstrations
+- **🎪 Custom Cursor** - Immersive browsing experience
+- **📜 Scroll Animations** - Progressive content revelation
+- **🌓 Modern Design** - Academic-friendly dark theme with professional accents
+- **📄 Publications Section** - Dedicated research publications showcase
+- **🚀 Project Previews** - 3D visualization of 6 featured projects
 
 ## 🛠️ Tech Stack
 
@@ -21,6 +32,29 @@ A modern, interactive 3D portfolio website built with **Vite**, **Three.js**, an
 - **Vanilla JavaScript** - For maximum performance
 - **CSS3** - Modern styling with custom properties
 - **GitHub Pages** - Static hosting
+
+## 📊 Research Showcase
+
+### Featured Publications
+1. **SEMANTIFY: Unveiling Memes with Robust Interpretability beyond Input Attribution** (IJCAI 2024 Main)
+2. **AlpaPICO: Extraction of PICO Frames from Clinical Trial Documents Using LLMs** (Method)
+3. **Cracking the code: enhancing interpretability and accessibility of ophthalmic disorders detection using KAN** (SPIE Photonics West)
+
+### Featured Projects
+1. **TalkitOut** - Full-stack social media platform with AI Co-Pilot integration
+2. **Domain Specific Question Answering (DevRev)** - Gold medalist solution for Inter IIT 11.0
+3. **Neural Activity Classifier** - EEG-based action classification with 75% accuracy
+4. **Ping Pong on FPGA** - Hardware implementation on DE1-SOC board
+5. **LostFound Android App** - Firebase-powered lost & found system
+6. **Assembler Emulator** - Custom instruction set with C++ implementation
+
+### Research Skills
+- **Deep Learning** - Advanced neural network architectures
+- **Mathematical Analysis** - Optimization and algorithm development
+- **Data Analysis** - Pattern recognition and statistical modeling
+- **Technical Writing** - Scientific publication and documentation
+- **Web Development** - Modern full-stack applications
+- **Collaboration** - Cross-functional team leadership
 
 ## 🚀 Quick Start
 

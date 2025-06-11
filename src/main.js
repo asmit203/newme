@@ -131,7 +131,7 @@ class Portfolio3D {
     this.projectPreviews = []
     
     // Create 3D previews for each project
-    for (let i = 1; i <= 3; i++) {
+    for (let i = 1; i <= 6; i++) {
       const container = document.getElementById(`project-preview-${i}`)
       if (!container) continue
 
@@ -175,6 +175,28 @@ class Portfolio3D {
           geometry = new THREE.CylinderGeometry(0.5, 1, 1.5, 8)
           material = new THREE.MeshPhongMaterial({ 
             color: 0x7c3aed,
+            flatShading: true
+          })
+          break
+        case 4:
+          geometry = new THREE.OctahedronGeometry(1)
+          material = new THREE.MeshPhongMaterial({ 
+            color: 0x10b981,
+            wireframe: true
+          })
+          break
+        case 5:
+          geometry = new THREE.DodecahedronGeometry(1)
+          material = new THREE.MeshPhongMaterial({ 
+            color: 0xf59e0b,
+            transparent: true,
+            opacity: 0.9
+          })
+          break
+        case 6:
+          geometry = new THREE.TetrahedronGeometry(1.2)
+          material = new THREE.MeshPhongMaterial({ 
+            color: 0xef4444,
             flatShading: true
           })
           break
