@@ -349,27 +349,30 @@ class Portfolio3D {
     const cursorOutline = cursor.querySelector('.cursor-outline')
 
     let mouseX = 0, mouseY = 0
-    let cursorX = 0, cursorY = 0
+    let outlineX = 0, outlineY = 0
 
+    // Real-time dot tracking
     document.addEventListener('mousemove', (e) => {
       mouseX = e.clientX
       mouseY = e.clientY
+      
+      // Update dot immediately for responsiveness
+      cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px)`
     })
 
-    // Smooth cursor follow
-    const updateCursor = () => {
-      cursorX += (mouseX - cursorX) * 0.1
-      cursorY += (mouseY - cursorY) * 0.1
+    // Smooth trailing outline
+    const updateOutline = () => {
+      outlineX += (mouseX - outlineX) * 0.15
+      outlineY += (mouseY - outlineY) * 0.15
       
-      cursorDot.style.transform = `translate(${cursorX}px, ${cursorY}px)`
-      cursorOutline.style.transform = `translate(${cursorX}px, ${cursorY}px)`
+      cursorOutline.style.transform = `translate(${outlineX}px, ${outlineY}px)`
       
-      requestAnimationFrame(updateCursor)
+      requestAnimationFrame(updateOutline)
     }
-    updateCursor()
+    updateOutline()
 
     // Cursor interactions
-    const interactiveElements = document.querySelectorAll('a, button, .project-card, .skill-item')
+    const interactiveElements = document.querySelectorAll('a, button, .project-card, .skill-item, .contact-method, .nav-link, .btn')
     
     interactiveElements.forEach(el => {
       el.addEventListener('mouseenter', () => {
