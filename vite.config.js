@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import { resolve } from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,6 +11,11 @@ export default defineConfig({
     minify: 'esbuild',
     target: 'es2015',
     rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        journey: resolve(__dirname, 'journey.html'),
+        publicationDetail: resolve(__dirname, 'publication-detail.html'),
+      },
       output: {
         manualChunks: {
           three: ['three'],

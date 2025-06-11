@@ -472,16 +472,43 @@ class Portfolio3D {
     // Smooth scrolling for navigation
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', (e) => {
-        e.preventDefault()
-        const targetId = link.getAttribute('href').substring(1)
-        const targetSection = document.getElementById(targetId)
-        
-        targetSection.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        })
+        const href = link.getAttribute('href')
+
+        // Only handle internal anchor links with smooth scrolling
+        if (href.startsWith('#')) {
+          e.preventDefault()
+          const targetId = href.substring(1)
+          const targetSection = document.getElementById(targetId)
+
+          if (targetSection) {
+            targetSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            })
+          }
+        }
+        // External links (like journey.html) will navigate normally
+
+        // If mobile menu is open, close it when a link is clicked
+        const navMenu = document.querySelector('.nav-menu')
+        const hamburger = document.querySelector('.hamburger')
+        if (navMenu && navMenu.classList.contains('active')) {
+          navMenu.classList.remove('active')
+          hamburger.classList.remove('active')
+        }
       })
     })
+
+    // Hamburger menu toggle
+    const hamburger = document.querySelector('.hamburger')
+    const navMenu = document.querySelector('.nav-menu')
+
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active')
+        navMenu.classList.toggle('active')
+      })
+    }
 
     // Hero buttons
     document.getElementById('explore-btn')?.addEventListener('click', () => {

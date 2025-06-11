@@ -27,9 +27,9 @@
                 "poster": "https://doi.org/10.1117/12.3047749"
             },
             "images": {
-                "hero": "/public/publications/kan/kan-hero.png",
-                "architecture": "/public/publications/kan/kan-arch.png",
-                "results": "/public/publications/kan/kan-results.png"
+                "hero": "./publications/kan/kan-hero.png",
+                "architecture": "./publications/kan/kan-arch.png",
+                "results": "./publications/kan/kan-results.png"
             },
             "citation": "@inproceedings{ganguly2025cracking,\n  title={Cracking the code: enhancing interpretability and accessibility of ophthalmic disorder detection using Kolmogorov-Arnold Network},\n  author={Ganguly, Asmit and Lakshminarayanan, Vasudevan},\n  booktitle={Ophthalmic Technologies XXXV},\n  volume={13300},\n  pages={150--158},\n  year={2025},\n  organization={SPIE}\n}",
             "status": "Published"
@@ -63,9 +63,9 @@
                 "poster": ""
             },
             "images": {
-                "hero": "/public/publications/semantify/semantify-hero.png",
-                "architecture": "/public/publications/semantify/semantify-arch.png",
-                "results": "/public/publications/semantify/semantify-results.png"
+                "hero": "./publications/semantify/semantify-hero.png",
+                "architecture": "./publications/semantify/semantify-arch.png",
+                "results": "./publications/semantify/semantify-results.png"
             },
             "citation": "@inproceedings{bandyopadhyay2024semantify,\ntitle={SEMANTIFY: Unveiling Memes with Robust Interpretability beyond Input Attribution},\nauthor={Bandyopadhyay, Dibyanayan and Ganguly, Asmit and Gain, Baban and Ekbal, Asif},\nbooktitle={IJCAI'24 Main},\nyear={2024}\n}",
             "status": "Published"
@@ -98,9 +98,9 @@
                 "poster": ""
             },
             "images": {
-                "hero": "/public/publications/alpapico/alpapico-hero.png",
-                "architecture": "/public/publications/alpapico/alpapico-arch.png",
-                "results": "/public/publications/alpapico/alpapico-results.png"
+                "hero": "./publications/alpapico/alpapico-hero.png",
+                "architecture": "./publications/alpapico/alpapico-arch.png",
+                "results": "./publications/alpapico/alpapico-results.png"
             },
             "citation": "@article{ghosh2024alpapico,\ntitle={AlpaPICO: Extraction of PICO frames from clinical trial documents using LLMs},\nauthor={Ghosh, Madhusudan and Mukherjee, Shrimon and Ganguly, Asmit and Basuchowdhuri, Partha and Naskar, Sudip Kumar and Ganguly, Debasis},\njournal={Methods},\nvolume={226},\npages={78--88},\nyear={2024},\npublisher={Academic Press}\n}",
             "status": "Published"
