@@ -19,6 +19,7 @@ class Portfolio3D {
     this.setupParticles()
     this.setupCustomCursor()
     this.setupScrollAnimations()
+    this.setupGallerySlideshow()
     this.hideLoadingScreen()
     this.animate()
   }
@@ -68,7 +69,7 @@ class Portfolio3D {
     
     // Create interactive elements for sections
     this.createProjectPreviews()
-    this.createSkillVisualization()
+    // this.createSkillVisualization() // Removed - no longer needed
     this.createContactScene()
   }
 
@@ -490,25 +491,14 @@ class Portfolio3D {
       })
     })
 
-    // Skill item interactions
+    // Skill item interactions (removed 3D visualization)
     document.querySelectorAll('.skill-item').forEach((item, index) => {
       item.addEventListener('mouseenter', () => {
-        if (this.skillNodes && this.skillNodes[index]) {
-          // Animate skill node on hover
-          new TWEEN.Tween(this.skillNodes[index].scale)
-            .to({ x: 1.5, y: 1.5, z: 1.5 }, 300)
-            .easing(TWEEN.Easing.Quadratic.Out)
-            .start()
-        }
+        // 3D visualization removed - just use CSS hover effects
       })
 
       item.addEventListener('mouseleave', () => {
-        if (this.skillNodes && this.skillNodes[index]) {
-          new TWEEN.Tween(this.skillNodes[index].scale)
-            .to({ x: 1, y: 1, z: 1 }, 300)
-            .easing(TWEEN.Easing.Quadratic.Out)
-            .start()
-        }
+        // 3D visualization removed - just use CSS hover effects
       })
     })
 
@@ -696,7 +686,62 @@ class Portfolio3D {
     skillItems.forEach(item => {
       skillsObserver.observe(item)
     })
+
+    this.setupGallerySlideshow()
   }
+
+  setupGallerySlideshow() {
+    const slides = document.querySelectorAll('.gallery-slide')
+    const dots = document.querySelectorAll('.gallery-dot')
+    const prevBtn = document.querySelector('.prev-btn')
+    const nextBtn = document.querySelector('.next-btn')
+
+    if (!slides.length) return
+
+    let currentSlide = 0
+    const totalSlides = slides.length
+
+    const updateSlideshow = () => {
+      // Remove active class from all slides and dots
+      slides.forEach(slide => slide.classList.remove('active'))
+      dots.forEach(dot => dot.classList.remove('active'))
+
+      // Add active class to current slide and dot
+      slides[currentSlide].classList.add('active')
+      dots[currentSlide].classList.add('active')
+    }
+
+    const nextSlide = () => {
+      currentSlide = (currentSlide + 1) % totalSlides
+      updateSlideshow()
+    }
+
+    const prevSlide = () => {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides
+      updateSlideshow()
+    }
+
+    const goToSlide = (slideIndex) => {
+      currentSlide = slideIndex
+      updateSlideshow()
+    }
+
+    // Event listeners
+    nextBtn?.addEventListener('click', nextSlide)
+    prevBtn?.addEventListener('click', prevSlide)
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => goToSlide(index))
+    })
+
+    // Auto-advance slideshow every 5 seconds
+    setInterval(nextSlide, 5000)
+
+    // Initialize
+    updateSlideshow()
+  }
+
+  // ...existing code...
 
   hideLoadingScreen() {
     setTimeout(() => {
@@ -779,18 +824,18 @@ class Portfolio3D {
       }
     })
 
-    // Animate skill visualization
-    if (this.skillNodes) {
-      this.skillNodes.forEach((node, index) => {
-        node.position.y += Math.sin(time * 2 + index) * 0.01
-        node.material.emissive.setHSL(
-          (time * 0.1 + index * 0.1) % 1,
-          0.5,
-          0.1
-        )
-      })
-      this.skillRenderer.render(this.skillScene, this.skillCamera)
-    }
+    // Animate skill visualization (removed)
+    // if (this.skillNodes) {
+    //   this.skillNodes.forEach((node, index) => {
+    //     node.position.y += Math.sin(time * 2 + index) * 0.01
+    //     node.material.emissive.setHSL(
+    //       (time * 0.1 + index * 0.1) % 1,
+    //       0.5,
+    //       0.1
+    //     )
+    //   })
+    //   this.skillRenderer.render(this.skillScene, this.skillCamera)
+    // }
 
     // Animate contact scene
     if (this.contactEnvelope) {
