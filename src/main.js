@@ -349,37 +349,42 @@ class Portfolio3D {
     const cursorDot = cursor.querySelector('.cursor-dot')
     const cursorOutline = cursor.querySelector('.cursor-outline')
 
+    // Add will-change for GPU acceleration
+    cursorDot.style.willChange = 'transform';
+    cursorOutline.style.willChange = 'transform';
+
     let mouseX = 0, mouseY = 0
+    let dotX = 0, dotY = 0
     let outlineX = 0, outlineY = 0
 
-    // Real-time dot tracking
+    // Only store mouse position on mousemove
     document.addEventListener('mousemove', (e) => {
       mouseX = e.clientX
       mouseY = e.clientY
-      
-      // Update dot immediately for responsiveness
-      cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px)`
     })
 
-    // Smooth trailing outline
-    const updateOutline = () => {
+    // Animate both dot and outline in a single rAF loop
+    const animateCursor = () => {
+      // Dot follows mouse instantly, but with a small lerp for smoothness
+      dotX += (mouseX - dotX) * 0.35
+      dotY += (mouseY - dotY) * 0.35
+      cursorDot.style.transform = `translate(${dotX}px, ${dotY}px)`
+
+      // Outline follows with more lag
       outlineX += (mouseX - outlineX) * 0.15
       outlineY += (mouseY - outlineY) * 0.15
-      
       cursorOutline.style.transform = `translate(${outlineX}px, ${outlineY}px)`
-      
-      requestAnimationFrame(updateOutline)
+
+      requestAnimationFrame(animateCursor)
     }
-    updateOutline()
+    animateCursor()
 
     // Cursor interactions
     const interactiveElements = document.querySelectorAll('a, button, .project-card, .skill-item, .contact-method, .nav-link, .btn')
-    
     interactiveElements.forEach(el => {
       el.addEventListener('mouseenter', () => {
         cursorOutline.classList.add('expand')
       })
-      
       el.addEventListener('mouseleave', () => {
         cursorOutline.classList.remove('expand')
       })
