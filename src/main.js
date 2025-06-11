@@ -619,7 +619,83 @@ class Portfolio3D {
     document.querySelector('.about-visual')?.classList.add('slide-in-right')
     document.querySelector('.projects-grid')?.classList.add('fade-in')
     document.querySelector('.contact-info')?.classList.add('slide-in-left')
-    document.querySelector('.contact-visual')?.classList.add('slide-in-right')
+
+    // Staggered animations for about section elements
+    this.setupAboutAnimations()
+  }
+
+  setupAboutAnimations() {
+    // Animate stat items with stagger
+    const statItems = document.querySelectorAll('.stat-item')
+    statItems.forEach((item, index) => {
+      item.style.animationDelay = `${index * 0.2}s`
+      item.classList.add('fade-in')
+    })
+
+    // Animate skill items with stagger
+    const skillItems = document.querySelectorAll('.skill-item')
+    skillItems.forEach((item, index) => {
+      item.style.animationDelay = `${index * 0.1}s`
+      item.classList.add('skill-fade-in')
+    })
+
+    // Add hover effects for skill items
+    skillItems.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        item.style.transform = 'translateY(-8px) rotateY(5deg) scale(1.05)'
+      })
+
+      item.addEventListener('mouseleave', () => {
+        item.style.transform = 'translateY(0) rotateY(0deg) scale(1)'
+      })
+    })
+
+    // Interactive stat counter animation
+    const observerOptions = {
+      threshold: 0.5,
+      rootMargin: '0px 0px -100px 0px'
+    }
+
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const statNumber = entry.target.querySelector('.stat-number')
+          const finalValue = statNumber.textContent
+          const numericValue = parseInt(finalValue.replace(/\D/g, ''))
+
+          // Animate counter
+          let currentValue = 0
+          const increment = numericValue / 30
+          const timer = setInterval(() => {
+            currentValue += increment
+            if (currentValue >= numericValue) {
+              currentValue = numericValue
+              clearInterval(timer)
+            }
+            statNumber.textContent = Math.floor(currentValue) + (finalValue.includes('+') ? '+' : '')
+          }, 50)
+
+          statObserver.unobserve(entry.target)
+        }
+      })
+    }, observerOptions)
+
+    statItems.forEach(item => {
+      statObserver.observe(item)
+    })
+
+    // Skills intersection observer
+    const skillsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible')
+        }
+      })
+    }, observerOptions)
+
+    skillItems.forEach(item => {
+      skillsObserver.observe(item)
+    })
   }
 
   hideLoadingScreen() {
