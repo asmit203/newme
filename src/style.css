@@ -442,6 +442,14 @@ main {
   background-clip: text;
 }
 
+.hero-name span {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: var(--primary-color); /* Fallback for browsers that don't support background-clip */
+}
+
 .hero-subtitle {
   font-size: var(--font-size-xl);
   color: var(--text-secondary);
