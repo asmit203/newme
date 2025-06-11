@@ -689,8 +689,8 @@ main {
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-md);
   width: 100%;
-    max-width: 350px;
-  }
+  max-width: 350px;
+}
   
   .stat-item {
     text-align: center;
@@ -704,10 +704,10 @@ main {
     overflow: hidden;
     cursor: pointer;
     min-height: 80px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   
   .stat-item::before {
@@ -750,9 +750,9 @@ main {
     position: relative;
     z-index: 1;
     word-wrap: break-word;
-      hyphens: auto;
-      line-height: 1.2;
-      max-width: 100%;
+    hyphens: auto;
+    line-height: 1.2;
+    max-width: 100%;
   }
   
   .skills-section {
@@ -1425,7 +1425,7 @@ main {
 .profile-image-frame {
   position: relative;
   width: 220px;
-    height: 220px;
+  height: 220px;
   border-radius: 50%;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.1);
@@ -1690,16 +1690,16 @@ main {
     
     .stat-item {
       padding: var(--spacing-md) var(--spacing-xs);
-        min-height: 70px;
+      min-height: 70px;
     }
     
     .stat-number {
       font-size: var(--font-size-xl);
-      }
+    }
       
-      .stat-label {
-        font-size: 10px;
-        line-height: 1.1;
+    .stat-label {
+      font-size: 10px;
+      line-height: 1.1;
     }
     
     .skills-grid {
@@ -1718,20 +1718,22 @@ main {
     
     .about-visual {
       height: 250px;
-    
-        .about-gallery {
-          height: 200px;
-          max-width: 100%;
-          order: 1;
-          margin-bottom: var(--spacing-lg);
-        }
-    
-        .profile-image-container {
-          order: 2;
-        }
-    
-        .about-stats {
-          order: 3;
+    }
+
+    .about-gallery {
+      height: 200px;
+      max-width: 100%;
+      order: 1;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .profile-image-container {
+      order: 2;
+    }
+
+    .about-stats {
+      order: 3;
+    }
   
   .projects-grid {
     grid-template-columns: 1fr;
@@ -1798,7 +1800,7 @@ main {
   .profile-image-frame {
     width: 180px;
     height: 180px;
-  
+  }
   
   .about-section {
     padding: var(--spacing-2xl) 0;
@@ -1824,25 +1826,25 @@ main {
     font-size: var(--font-size-2xl);
   }
   
-    .about-stats {
-      gap: 4px;
-    }
+  .about-stats {
+    gap: 4px;
+  }
+  
   .stat-item {
     padding: var(--spacing-sm) 4px;
-      min-height: 60px;
+    min-height: 60px;
   }
   
   .stat-number {
     font-size: var(--font-size-lg);
   }
   
-    .stat-label {
-      font-size: 8px;
-      line-height: 1;
-      margin-top: 2px;
-    }
-    }
-    }
+  .stat-label {
+    font-size: 8px;
+    line-height: 1;
+    margin-top: 2px;
+  }
+}
 
 /* Intersection Observer Classes */
 .fade-in {
