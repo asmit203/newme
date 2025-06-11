@@ -392,6 +392,18 @@ class Portfolio3D {
       rootMargin: '0px 0px -100px 0px'
     }
 
+    // Special observer for publication cards with 3D carousel effect
+    const publicationObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible')
+          }, index * 200) // Stagger the animations
+        }
+      })
+    }, observerOptions)
+
+    // Regular observer for other elements
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -400,9 +412,16 @@ class Portfolio3D {
       })
     }, observerOptions)
 
-    // Add observer to animated elements
+    // Apply special observer to publication cards
+    document.querySelectorAll('.publication-card').forEach(card => {
+      publicationObserver.observe(card)
+    })
+
+    // Add observer to other animated elements
     document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
-      observer.observe(el)
+      if (!el.classList.contains('publication-card')) {
+        observer.observe(el)
+      }
     })
 
     // Navbar scroll effect

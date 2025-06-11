@@ -299,6 +299,9 @@ body {
   background: rgba(0, 212, 255, 0.05);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cursor-outline.expand {
@@ -577,19 +580,27 @@ main {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: var(--spacing-md);
 }
 
 .skill-item {
   background: var(--bg-tertiary);
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-sm);
   border-radius: var(--radius-lg);
   text-align: center;
   font-weight: 600;
+  font-size: var(--font-size-sm);
   transition: all var(--animation-speed-normal);
   cursor: pointer;
   border: 1px solid transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .skill-item:hover {
@@ -601,28 +612,54 @@ main {
 /* Publications Section */
 .publications-section {
   padding: var(--spacing-3xl) 0;
-  background: var(--bg-secondary);
+  background: transparent;
+  perspective: 1000px;
+  overflow-x: hidden;
 }
 
 .publications-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: var(--spacing-2xl);
+  transform-style: preserve-3d;
 }
 
 .publication-card {
-  background: var(--bg-primary);
+  background: rgba(26, 26, 26, 0.3);
   border-radius: var(--radius-2xl);
   padding: var(--spacing-xl);
-  transition: all var(--animation-speed-normal);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transform: rotateY(-15deg) translateZ(-50px);
+  opacity: 0.7;
+  transform-style: preserve-3d;
+  animation: floatIn3D 0.8s ease-out forwards;
+  animation-play-state: paused;
+}
+
+.publication-card.visible {
+  animation-play-state: running;
+  transform: rotateY(0deg) translateZ(0px);
+  opacity: 1;
+}
+
+.publication-card:nth-child(even) {
+  transform: rotateY(15deg) translateZ(-50px);
+}
+
+.publication-card:nth-child(even).visible {
+  transform: rotateY(0deg) translateZ(0px);
 }
 
 .publication-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 212, 255, 0.1);
+  transform: translateY(-12px) rotateY(5deg) translateZ(20px);
+  box-shadow: 
+    0 25px 50px rgba(0, 212, 255, 0.15),
+    0 10px 20px rgba(124, 58, 237, 0.1);
   border-color: var(--primary-color);
+  background: rgba(26, 26, 26, 0.5);
 }
 
 .publication-image {
@@ -1034,6 +1071,28 @@ main {
   }
 }
 
+@keyframes carousel3DEntry {
+  0% {
+    transform: rotateY(-45deg) translateZ(-100px) translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0deg) translateZ(0px) translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes floatIn3D {
+  0% {
+    transform: rotateY(15deg) translateZ(-80px) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0deg) translateZ(0px) scale(1);
+    opacity: 1;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .nav-menu {
@@ -1069,6 +1128,13 @@ main {
   
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+  }
+  
+  .skill-item {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-sm);
+    min-height: 50px;
   }
   
   .container {
@@ -1087,6 +1153,27 @@ main {
   
   .skills-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-xs);
+  }
+  
+  .skill-item {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-sm);
+    min-height: 45px;
+  }
+  
+  .publications-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .publication-card {
+    transform: none;
+    opacity: 1;
+  }
+  
+  .publication-card.visible {
+    transform: none;
   }
   
   .contact-methods {
